@@ -10,7 +10,7 @@ The analysis is descriptive: it identifies patterns in the available customer re
 
 **Source:** `data/cleaned_dataset_FatemehDehghan224.xlsx` (sheet: `customers`)
 
-The cleaned dataset contains 60 unique customers and 17 columns. It includes demographic, location, membership, purchasing, recency, satisfaction, device, payment, discount, and return-related fields. The Phase 1 cleaning workflow removed duplicate records, resolved missing and invalid values, standardized locations, aligned gender values with the reviewed name mapping, and validated spending calculations.
+The cleaned dataset contains 60 unique customers and 17 source columns. It includes demographic, location, membership, purchasing, recency, satisfaction, device, payment, discount, and return-related fields. The Phase 1 cleaning workflow removed duplicate records, resolved missing and invalid values, standardized locations, aligned gender values with the reviewed name mapping, and validated spending calculations. Source values where `returned_items > purchase_count` are preserved rather than overwritten; the six affected records are listed in the workbook's `Data Quality Flags` sheet for supervisor review.
 
 The analysis notebook checks the columns required for each question before calculating summaries or creating charts. All 60 customers had complete values for the variables used in Questions 1–5, so no additional rows were excluded from those analyses.
 
@@ -106,7 +106,7 @@ Run the notebook cells in order from the repository root (or open the notebook i
 
 **Approach.** The analysis compared average total spending, purchase count, average order value, returned-item count, and satisfaction by discount use, device, and payment method. Medians and group sizes were retained as robustness checks; all device and payment groups contain at least 18 customers.
 
-**Findings.** Discount users (n=26) have lower observed average total spending than non-users (n=34): 2,882.17 versus 3,736.74, a difference of −22.9%. Their purchase frequency is nearly identical (17.50 versus 17.29), but their average order value is lower (203.29 versus 220.70). Discount users also have fewer returned items on average (3.58 versus 3.97) and higher satisfaction (3.27 versus 2.76).
+**Findings.** Discount users (n=26) have lower observed average total spending than non-users (n=34): 2,882.17 versus 3,736.74, a difference of −22.9%. Their purchase frequency is nearly identical (17.50 versus 17.29), but their average order value is lower (203.29 versus 220.70). Using the preserved source values, discount users also have slightly fewer returned items on average (4.08 versus 4.26, a difference of −4.4%) and higher satisfaction (3.27 versus 2.76).
 
 By device, iPhone customers have the highest mean total spending (3,773.94; n=18), followed by Android (3,459.07; n=22) and Web (2,897.76; n=20). Android has the highest median spending, so a small number of high-value iPhone customers may be raising the iPhone mean. By payment method, Card has the highest mean and median total spending (3,929.00; n=18), making that ranking more consistent. Cash customers have the highest observed satisfaction and purchase frequency, while Online Wallet customers have the lowest average satisfaction.
 
@@ -152,6 +152,6 @@ By device, iPhone customers have the highest mean total spending (3,773.94; n=18
 ## Deliverables
 
 - `analysis_code/customer_profile_analysis.ipynb` — complete Phase 2 analysis, tables, charts, and written interpretations.
-- `data/cleaned_dataset_FatemehDehghan224.xlsx` — cleaned input dataset from Phase 1.
+- `data/cleaned_dataset_FatemehDehghan224.xlsx` — cleaned input dataset, data-quality flags, executive summary, and validated analysis tables.
 - `assets/charts/` — chart images embedded in this README.
 - `customer_analytics_results.xlsx` — optional multi-sheet results workbook, generated from the notebook when export is enabled.
