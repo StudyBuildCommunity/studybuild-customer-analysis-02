@@ -9,3 +9,6 @@ anaconda_projects/
 ~$*.xlsx
 .DS_Store
 Thumbs.db
+tmp/
+build_question6_pdf.py
+data/raw_dataset_FatemehDehghan224.xlsx
