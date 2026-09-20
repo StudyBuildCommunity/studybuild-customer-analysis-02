@@ -281,6 +281,9 @@ jupyter lab notebook/analysis_notebook_clean.ipynb
 
 ## 🛠️ Built With 
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=flat-square&logo=matplotlib&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=flat-square&logo=seaborn&logoColor=white)
+
 
 
 ## 👤 Author & Contact
